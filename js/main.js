@@ -71,8 +71,57 @@ const test = [
   [23, 4, "world"],
 ];
 
-console.log(test);  
+console.log(test);
 console.log(grades[0]);
 console.log(test[1]);
 console.log(test[5][2]);
 console.log(test[4].faculty);
+
+console.log("====================== Operators =======================");
+
+/**
+ * Operators
+ * 1. Arithmetic Operators: +, - , *, /, %
+ * 2. Relational Operators: ==, !=, >, >=, <, <=, ===, !==
+ * 3. Logical Operators: && (AND), || (OR), ! (NOT)
+ * 4. Ternary Operator: condition ? true : false
+ */
+
+console.log(5 + 6);
+console.log(15 - 6);
+console.log(5 * 6);
+console.log(15 / 6);
+console.log(15 % 6); // Remainder
+
+console.log(5 + "6"); // 56
+console.log(15 - "6"); // 9
+console.log("10" + "5"); //105
+
+// Relational operators
+console.log(10 < 15);
+console.log(10 > 15);
+console.log(10 < 10); // false
+console.log(10 <= 10); // true
+console.log(10 == 10); // true
+console.log(10 == 11); // false
+console.log(10 != 11); // true
+console.log(10 == "10"); // true
+console.log(10 === "10"); // false
+console.log(10 !== "10"); // true
+
+// Logical operator
+/** AND: If any one input is false, then result is false */
+/** OR: If any one input is true, then result is true */
+/** NOT: If input is true, then result is false and vice-versa */
+console.log("========AND============");
+console.log(true && false); // false
+console.log(true && true); // true
+
+console.log("========OR============");
+console.log(false || false); // false
+console.log(true || false); // true
+console.log(true || true); // true
+
+console.log("========NOT============");
+console.log(!true); //false
+console.log(!false); //true

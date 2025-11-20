@@ -11,10 +11,10 @@
 - Print
 - Variables
 - Data types
---------------------------------------------
 - Operators (arithmetic, logical, relational)
-- Conditional Statement (if, else, switch)
+- Conditional Statement (if, else, switch, ternary operator)
 - Loop (for, while)
+--------------------------------------------
 - Function
 - EcmaScript (Template literals, spread operator, destructuring, arrow function)
 - Array methods (map, reduce, sort, filter, find)
