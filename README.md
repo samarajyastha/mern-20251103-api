@@ -16,11 +16,12 @@
 - Loop (for, while)
 - Function
 - EcmaScript (Template literals, spread operator, destructuring, arrow function)
---------------------------------------------
 - Array methods (map, reduce, sort, filter, find)
-- DOM manipulation
-
 --------------------
+- Node.js
+- Promises, callbacks, async/await
+
+## Learning Path
 1. JS
 
 Backend
