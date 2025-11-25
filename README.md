@@ -5,7 +5,20 @@
 - Dynamically typed programming language
 - Used to build interactive web pages
 - ECMA Script (ES6 2015) Standardization of JS
-- Node.JS, Electron.js, React Native, Tensorflow.js
+- NodeJS, Electron.js, React Native, Tensorflow.js
+
+# NodeJS
+- It is a JavaScript runtime.
+- Runtime: A program that runs another program
+- Runs JS in local machine
+- Build on C++
+- Built on top of Google Chrome V8 engine
+- Used for: API, micro-services, real time app, JSON based API
+
+## Architecture
+- Single threaded
+- Non-blocking operation
+- Event driven
 
 ## JS course content
 - Print
@@ -16,11 +29,21 @@
 - Loop (for, while)
 - Function
 - EcmaScript (Template literals, spread operator, destructuring, arrow function)
-- Array methods (map, reduce, sort, filter, find)
---------------------
-- Node.js
-- Promises, callbacks, async/await
+- Array methods (map, reduce, sort, filter, find, includes, every, some)
 
+## NodeJS course content
+- NodeJS
+- CommonJS/ES modules
+- File system
+- HTTP
+- Event
+- Path
+- URL
+- Callbacks, Promises, async/await
+- Semantics
+- Express
+
+----------------------------------------------
 ## Learning Path
 1. JS
 

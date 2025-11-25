@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "0.1.0",
+  "description": "This is my node project for learning purposes.",
+  "license": "MIT",
+  "author": "Samarajya Shrestha",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}
