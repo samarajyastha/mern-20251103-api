@@ -35,14 +35,20 @@
 - NodeJS
 - CommonJS/ES modules
 - File system
----------------------------------------
 - HTTP
 - Event
 - Path
 - URL
+---------------------------------------
+- HTTP methods, HTTP status codes (API)
 - Callbacks, Promises, async/await
-- Semantics
 - Express
+- REST API
+- Architecture
+- Middleware
+- Validation
+- Postman
+- Semantics
 
 ----------------------------------------------
 ## Learning Path
@@ -57,3 +63,7 @@ Frontend
 - DOM manipulation
 5. React
 6. Next.js
+
+# Github Pull request
+- Always create a new branch from `main` branch
+- Always format your code, use prettier code formatter

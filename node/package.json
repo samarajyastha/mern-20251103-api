@@ -9,9 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "nodemon modules/http.js"
   },
   "dependencies": {
     "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
