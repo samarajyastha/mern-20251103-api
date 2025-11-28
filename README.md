@@ -67,3 +67,44 @@ Frontend
 # Github Pull request
 - Always create a new branch from `main` branch
 - Always format your code, use prettier code formatter
+
+## HTTP Methods
+1. GET : Used to fetch/retrieve data, No request body (READ)
+2. POST : Used to create data, uses request body to send data to API (CREATE)
+3. PUT : Used to update data, uses request body to send data to API (UPDATE)
+4. DELETE : Used to delete data (DELETE)
+5. PATCH : Used to partially update data
+
+POST /product JSON(data) -> Validate data -> Store in Database
+
+## HTTP Status Code
+1. 1xx - Informational (rarely used)
+2. 2xx - Success
+    - 200: OK
+    - 201: Created
+    - 204: No content (delete)
+3. 3xx - Redirect (rarely used)
+    - 301: Moved permanently
+    - 304: Not modified (used for caching)
+4. 4xx - Client Error
+    - 400: Bad request (invalid input)
+    - 401: Unauthorized (not logged in user, no token/expired token)
+    - 403: Forbidden (logged in but not allowed)
+    - 404: Not found
+    - 405: Method not allowed
+    - 409: Conflict (duplicate email, phone)
+    - 422: Unprocessable entity (validation error)
+5. 5xx - Server Error
+    - 500: Internal server error
+    - 502: Bad gateway (invalid response from another service)
+    - 503: Service unavailable (temporary)
+    - 504: Timeout
+
+# Resume (CV) tips
+- Use templates, from google docs, canva
+- Your personal info like, name, email, address, phone along with github & linkedin account
+- Your short bio, summary
+- Experiences (Internship)
+- Avoid using paragraph
+- Add technical skills based on job, for e.g use MERN stack related tech for MERN stack developer
+- Highest level of education   
