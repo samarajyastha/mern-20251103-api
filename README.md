@@ -39,9 +39,9 @@
 - Event
 - Path
 - URL
----------------------------------------
 - HTTP methods, HTTP status codes (API)
 - Callbacks, Promises, async/await
+---------------------------------------
 - Express
 - REST API
 - Architecture
