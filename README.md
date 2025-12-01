@@ -20,6 +20,24 @@
 - Non-blocking operation
 - Event driven
 
+# ExpressJS
+- It is NodeJs API/backend framework, used to build API (Application program interface).
+- It simplifies the HTTP module of Node.js
+- Minimalist, unopinionated framework
+- REST API
+
+## API
+- API format
+    - JSON (we will use this)
+    - XML
+- REST (Representational state transfer) API
+
+## JSON
+- JSON => JavaScript Object : JSON.parse()
+- JavaScript Object => JSON : JSON.stringify()
+
+=========================================================================================
+
 ## JS course content
 - Print
 - Variables
@@ -41,14 +59,17 @@
 - URL
 - HTTP methods, HTTP status codes (API)
 - Callbacks, Promises, async/await
----------------------------------------
 - Express
-- REST API
+- Environment variables (secrets, config)
+---------------------------------------
 - Architecture
+- REST API
+- Auth
 - Middleware
 - Validation
 - Postman
 - Semantics
+- JSON
 
 ----------------------------------------------
 ## Learning Path
