@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/samarajyastha/mern-20251103-api#readme",
   "dependencies": {
+    "body-parser": "^2.2.1",
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
   },

@@ -1,10 +1,14 @@
+import bodyParser from "body-parser";
 import express from "express";
+
 import config from "./config/config.js";
 import productRoute from "./routes/product.route.js";
 
 // root
 
 const app = express();
+
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.json({

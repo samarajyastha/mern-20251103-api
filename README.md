@@ -32,7 +32,7 @@
     - XML
 - REST (Representational state transfer) API
 
-## JSON
+## JSON: JavaScript Object Notation
 - JSON => JavaScript Object : JSON.parse()
 - JavaScript Object => JSON : JSON.stringify()
 
@@ -61,8 +61,8 @@
 - Callbacks, Promises, async/await
 - Express
 - Environment variables (secrets, config)
----------------------------------------
 - Architecture
+---------------------------------------
 - REST API
 - Auth
 - Middleware
@@ -129,3 +129,18 @@ POST /product JSON(data) -> Validate data -> Store in Database
 - Avoid using paragraph
 - Add technical skills based on job, for e.g use MERN stack related tech for MERN stack developer
 - Highest level of education   
+
+## Layered Architecture
+1. API Layer
+    a. Routes
+    - Handle the routes/endpoints
+    b. Controllers
+    - Handle requests and responses
+    c. Middlewares
+    - Handle requests and responses
+    - Logging, Auth
+2. Business Logic Layer
+    a. Services
+3. Data Logic Layer
+    a. Models
+4. Database Layer
