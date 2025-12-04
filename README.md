@@ -1,4 +1,5 @@
 # JavaScript
+
 - High-level programming language
 - Interpreted programming language
 - Built on C++
@@ -8,6 +9,7 @@
 - NodeJS, Electron.js, React Native, Tensorflow.js
 
 # NodeJS
+
 - It is a JavaScript runtime.
 - Runtime: A program that runs another program
 - Runs JS in local machine
@@ -16,29 +18,125 @@
 - Used for: API, micro-services, real time app, JSON based API
 
 ## Architecture
+
 - Single threaded
 - Non-blocking operation
 - Event driven
 
 # ExpressJS
+
 - It is NodeJs API/backend framework, used to build API (Application program interface).
 - It simplifies the HTTP module of Node.js
 - Minimalist, unopinionated framework
 - REST API
 
 ## API
+
 - API format
-    - JSON (we will use this)
-    - XML
+  - JSON (we will use this)
+  - XML
 - REST (Representational state transfer) API
 
 ## JSON: JavaScript Object Notation
+
 - JSON => JavaScript Object : JSON.parse()
 - JavaScript Object => JSON : JSON.stringify()
+
+# MongoDB
+
+- Non-relational database
+- Data are stored in collections & documents
+- Database: Main container, where all collection of data are stored.
+- Collection: Equivalent to table of relational database
+- Document: Equivalent to Row
+- Field: Equivalent to Column
+
+## Tools used in MongoDB
+
+- Locally: MongoDB Compass (shell included)
+- Cloud: MongoDB Atlas
+
+## Steps to run MongoDB locally
+
+- Download and install MongoDB (https://www.mongodb.com/try/download/community)[https://www.mongodb.com/try/download/community]
+- Download and install MongoDB Compass (https://www.mongodb.com/try/download/compass)[https://www.mongodb.com/try/download/compass]
+
+_Note: In some cases, try to add the mongodb path in environment variables (system)_
+
+1. Run MongoDB Compass
+2. Setup a new connection (mongodb://localhost:27017)[mongodb://localhost:27017]
+
+## MongoDB Queries/Commands
+
+- show dbs: Show database list
+- use <database name>: Use database (create database if not exists)
+- show collections: Show list of collections (table)
+
+### Create/Add data
+
+1. insertOne
+
+- db.<collectionName>.insertOne()
+- for e.g: db.users.insertOne({name:"Ram", email: "ram@gmail.com"})
+
+2. insertMany
+
+- db.<collectionName>.insertMany()
+- for e.g: db.users.insertOne([{name:"Ram", email: "ram@gmail.com"}, {name:"sita", email: "sita@gmail.com"}])
+
+### Read data
+
+1. find
+
+- db.<collectionName>.find()
+- for e.g: db.products.find()
+- for e.g: db.products.find({name:"iphone"})
+
+2. findOne
+
+- db.<collectionName>.findOne({})
+- for e.g: db.products.findOne({name:"iphone"})
+
+3. countDocuments
+
+- db.products.countDocuments()
+
+### Update data
+
+1. updateOne
+
+- db.<collectionName>.updateOne({find}, {$set: {key: value} })
+
+### Delete data
+
+1. deleteOne
+
+- db.<collectionName>.deleteOne({find})
+
+## Complex filters
+
+1. $eq: db.users.find({name: {$eq: "Ram"} })
+2. $ne: db.users.find({name: {$ne: "Ram"} })
+3. $gt/$gte: db.users.find({age: {$gt: 20} })
+4. $lt/$lte: db.users.find({age: {$lt: 20} })
+5. $and: db.users.find({$and : [ {age: {$gt: 20} }, {name: {$eq: "Ram"} } ] })
+6. $or: db.users.find({$or : [ {age: {$gt: 20} }, {name: {$eq: "Ram"} } ] })
+
+- sort: db.users.find().sort({name: 1}) 1: ASC, -1: DESC
+- limit: db.users.find().limit(10)
+- skip: db.users.find().skip(5)
+
+# Mongoose
+- ODM of MongoDB for Node.js
+- Create Schema/ Validate Schema
+- Create models using schema
+- Middleware
+- Relationships
 
 =========================================================================================
 
 ## JS course content
+
 - Print
 - Variables
 - Data types
@@ -50,6 +148,7 @@
 - Array methods (map, reduce, sort, filter, find, includes, every, some)
 
 ## NodeJS course content
+
 - NodeJS
 - CommonJS/ES modules
 - File system
@@ -62,7 +161,9 @@
 - Express
 - Environment variables (secrets, config)
 - Architecture
----------------------------------------
+
+---
+
 - REST API
 - Auth
 - Middleware
@@ -71,25 +172,28 @@
 - Semantics
 - JSON
 
-----------------------------------------------
+---
+
 ## Learning Path
+
 1. JS
 
-Backend
-2. Node
-3. Express
-4. MongoDB
+Backend 2. Node 3. Express 4. MongoDB
 
 Frontend
+
 - DOM manipulation
+
 5. React
 6. Next.js
 
 # Github Pull request
+
 - Always create a new branch from `main` branch
 - Always format your code, use prettier code formatter
 
 ## HTTP Methods
+
 1. GET : Used to fetch/retrieve data, No request body (READ)
 2. POST : Used to create data, uses request body to send data to API (CREATE)
 3. PUT : Used to update data, uses request body to send data to API (UPDATE)
@@ -99,48 +203,51 @@ Frontend
 POST /product JSON(data) -> Validate data -> Store in Database
 
 ## HTTP Status Code
+
 1. 1xx - Informational (rarely used)
 2. 2xx - Success
-    - 200: OK
-    - 201: Created
-    - 204: No content (delete)
+   - 200: OK
+   - 201: Created
+   - 204: No content (delete)
 3. 3xx - Redirect (rarely used)
-    - 301: Moved permanently
-    - 304: Not modified (used for caching)
+   - 301: Moved permanently
+   - 304: Not modified (used for caching)
 4. 4xx - Client Error
-    - 400: Bad request (invalid input)
-    - 401: Unauthorized (not logged in user, no token/expired token)
-    - 403: Forbidden (logged in but not allowed)
-    - 404: Not found
-    - 405: Method not allowed
-    - 409: Conflict (duplicate email, phone)
-    - 422: Unprocessable entity (validation error)
+   - 400: Bad request (invalid input)
+   - 401: Unauthorized (not logged in user, no token/expired token)
+   - 403: Forbidden (logged in but not allowed)
+   - 404: Not found
+   - 405: Method not allowed
+   - 409: Conflict (duplicate email, phone)
+   - 422: Unprocessable entity (validation error)
 5. 5xx - Server Error
-    - 500: Internal server error
-    - 502: Bad gateway (invalid response from another service)
-    - 503: Service unavailable (temporary)
-    - 504: Timeout
+   - 500: Internal server error
+   - 502: Bad gateway (invalid response from another service)
+   - 503: Service unavailable (temporary)
+   - 504: Timeout
 
 # Resume (CV) tips
+
 - Use templates, from google docs, canva
 - Your personal info like, name, email, address, phone along with github & linkedin account
 - Your short bio, summary
 - Experiences (Internship)
 - Avoid using paragraph
 - Add technical skills based on job, for e.g use MERN stack related tech for MERN stack developer
-- Highest level of education   
+- Highest level of education
 
 ## Layered Architecture
+
 1. API Layer
-    a. Routes
-    - Handle the routes/endpoints
-    b. Controllers
-    - Handle requests and responses
-    c. Middlewares
-    - Handle requests and responses
-    - Logging, Auth
+   a. Routes
+   - Handle the routes/endpoints
+     b. Controllers
+   - Handle requests and responses
+     c. Middlewares
+   - Handle requests and responses
+   - Logging, Auth
 2. Business Logic Layer
-    a. Services
+   a. Services
 3. Data Logic Layer
-    a. Models
+   a. Models
 4. Database Layer
