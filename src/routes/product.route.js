@@ -19,4 +19,14 @@ router.get("/:id", productController.getProductById);
  */
 router.post("/", productController.createProduct);
 
+/**
+ * DELETE /api/products/:id
+ */
+router.delete("/:id", productController.deleteProduct);
+
+/**
+ * PUT /api/products/:id
+ */
+router.put("/:id", productController.updateProduct);
+
 export default router;
