@@ -133,6 +133,30 @@ _Note: In some cases, try to add the mongodb path in environment variables (syst
 - Middleware
 - Relationships
 
+# Cryptography
+## Encryption
+
+- Encryption: Converting readable text to cipher text (unreadable)
+- for e.g: hello => 31586621468vq146qww1
+
+- Decryption: Converting cipher text to readable
+- for e.g: 31586621468vq146qww1 => hello
+
+### Types
+- Symmetric: Same key is used for encryption and decryption
+- Asymmetric: Different keys are used in encryption and decryption, Public key/Private Key
+
+## Hashing
+- One way encryption
+- Convert readable text to cipher but not back to readable
+- Hashing of a text always returns same cipher
+
+## Salt
+- Adding random characters in hash value
+
+- 123456 => arfgsdfuiqwerasopdfa45ydpsdf
+- 123456 => as12345idfqweuiorasdfa0sdfgd
+
 =========================================================================================
 
 ## JS course content
