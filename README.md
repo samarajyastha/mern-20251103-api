@@ -197,6 +197,29 @@ _Note: In some cases, try to add the mongodb path in environment variables (syst
 4. Append token in every request to handle auth
 5. Verify the token and authenticate/authorize user
 
+## Middleware
+
+- Function that lies between request and response.
+
+Browser ------------ Request -----------> Server
+Middleware
+Server ------------- Response -----------> Browser
+
+- Function that has the access of both request and response object
+- It has additional functionality to go to next() middleware call
+
+### Usage
+- Logging
+- Authentication & Authorization
+- Request & Response object modification
+- Error handling, data validation
+
+## Authorization - RBAC (Role based access control)
+
+1. USER -> Order create
+2. MERCHANT -> Product create/update/delete
+3. ADMIN -> Product mngt, User mngt, Order mngt
+
 =========================================================================================
 
 ## JS course content
