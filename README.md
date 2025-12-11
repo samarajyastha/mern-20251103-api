@@ -220,6 +220,12 @@ Server ------------- Response -----------> Browser
 2. MERCHANT -> Product create/update/delete
 3. ADMIN -> Product mngt, User mngt, Order mngt
 
+## Validation (data)
+- Check/Verify whether the input data is valid or not
+- For e.g. name (string), age (number), isActive (boolean)
+
+- Validation -> API (Most important), Frontend, Database (optional)
+
 =========================================================================================
 
 ## JS course content
@@ -250,15 +256,22 @@ Server ------------- Response -----------> Browser
 - Architecture
 
 ---
-
-- REST API
-- Auth
-- Middleware
-- Validation
 - Postman
 - Semantics
-- JSON
-
+- Filter queries, pagination
+- Orders management
+- User management
+- File upload (Cloudinary, multer)
+- Template engine
+- Payment (khalti, stripe)
+- Forgot password, reset password
+- Email send
+- AI integration
+- Deployment
+- MongoDB Atlas
+- Refresh token
+- OAuth
+- Typescript (x)
 ---
 
 ## Learning Path
