@@ -266,6 +266,7 @@ Server ------------- Response -----------> Browser
 - Payment (khalti, stripe)
 - Forgot password, reset password
 - Email send
+- Debugging
 - AI integration
 - Deployment
 - MongoDB Atlas
@@ -351,3 +352,16 @@ POST /product JSON(data) -> Validate data -> Store in Database
 3. Data Logic Layer
    a. Models
 4. Database Layer
+
+## NodeJS Code Semantics
+
+- Always format your code (Use prettier code formatter)
+- Use proper spacing and line spacing.
+- Always use camelCase while naming your files and folders in JS (helloWorld)
+- Always use camelCase while naming your function & variables in JS (createUser)
+- File, variable names must be NOUN
+- Function & methods names must be VERB
+- Also check singular & plural case e.g (getUserById, getUsers)
+- Avoid using number while naming variable, function, file (test1 ❌, testOne ✅)
+- Add a line above `return` statement
+- If you have list of codes, arrange in ASC order `ctrl + shift + s`

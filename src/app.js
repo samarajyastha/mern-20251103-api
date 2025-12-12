@@ -1,15 +1,15 @@
 import bodyParser from "body-parser";
 import express from "express";
 
+import { ROLE_ADMIN } from "./constants/roles.js";
 import auth from "./middlewares/auth.js";
 import authRoute from "./routes/auth.route.js";
 import config from "./config/config.js";
 import connectDB from "./config/database.js";
 import logger from "./middlewares/logger.js";
 import productRoute from "./routes/product.route.js";
-import userRoute from "./routes/user.route.js";
 import roleBasedAuth from "./middlewares/roleBasedAuth.js";
-import { ROLE_ADMIN } from "./constants/roles.js";
+import userRoute from "./routes/user.route.js";
 
 const app = express();
 
