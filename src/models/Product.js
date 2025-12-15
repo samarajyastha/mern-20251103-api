@@ -23,6 +23,12 @@ const productSchema = new mongoose.Schema({
     default: 1,
   },
   imageUrls: [String],
+  createdBy: {
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
+    required: [true, "Created by user is required."],
+  },
+  description: String,
 });
 
 const model = mongoose.model("Product", productSchema);
