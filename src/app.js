@@ -7,6 +7,7 @@ import authRoute from "./routes/auth.route.js";
 import config from "./config/config.js";
 import connectDB from "./config/database.js";
 import logger from "./middlewares/logger.js";
+import orderRoute from "./routes/order.route.js";
 import productRoute from "./routes/product.route.js";
 import roleBasedAuth from "./middlewares/roleBasedAuth.js";
 import userRoute from "./routes/user.route.js";
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 app.use("/api/products", productRoute);
 app.use("/api/users", auth, roleBasedAuth(ROLE_ADMIN), userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/orders", orderRoute);
 
 app.listen(config.port, () => {
   console.log(`Server is running at port: ${config.port}...`);

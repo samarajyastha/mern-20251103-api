@@ -254,18 +254,19 @@ Server ------------- Response -----------> Browser
 - Express
 - Environment variables (secrets, config)
 - Architecture
-
----
 - Postman
 - Semantics
 - Filter queries, pagination
 - Orders management
-- User management
-- File upload (Cloudinary, multer)
-- Template engine
+
+---
 - Payment (khalti, stripe)
+- File upload (Cloudinary, multer)
 - Forgot password, reset password
 - Email send
+- User management
+- Mongodb Aggregation
+- Template engine
 - Debugging
 - AI integration
 - Deployment
@@ -365,3 +366,21 @@ POST /product JSON(data) -> Validate data -> Store in Database
 - Avoid using number while naming variable, function, file (test1 ❌, testOne ✅)
 - Add a line above `return` statement
 - If you have list of codes, arrange in ASC order `ctrl + shift + s`
+
+### Entity
+- Model
+- Service
+- Controller
+- Routes
+- Validation Schema (libs)
+
+# Product Orders
+- user (customer)
+- orderItems
+   - product
+   - quantity
+- status: pending, confirmed, shipped, delivered, cancelled
+- shippingAddress
+- totalPrice
+- orderNumber
+- payment
