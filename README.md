@@ -258,22 +258,22 @@ Server ------------- Response -----------> Browser
 - Semantics
 - Filter queries, pagination
 - Orders management
+- Payment (khalti, stripe(frontend))
 
 ---
-- Payment (khalti, stripe)
-- File upload (Cloudinary, multer)
-- Forgot password, reset password
-- Email send
-- User management
-- Mongodb Aggregation
-- Template engine
-- Debugging
-- AI integration
-- Deployment
-- MongoDB Atlas
-- Refresh token
-- OAuth
-- Typescript (x)
+-- Doubt clearance, esp payment
+- 0903: File upload (Cloudinary, multer)
+- 0905: Debugging
+- 0904: Forgot password, reset password
+- 0904: Email send
+- 0906: User management
+- 0906: Mongodb Aggregation
+- 0907: Template engine
+- 0908: Deployment
+- 0908: AI integration
+- 0909: MongoDB Atlas
+- 0909: Refresh token
+- 0910: Typescript (x)
 ---
 
 ## Learning Path

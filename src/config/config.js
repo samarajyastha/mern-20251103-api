@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const config = {
+  appUrl: process.env.APP_URL || "",
   name: process.env.NAME || "",
   port: process.env.PORT || 5000,
   version: process.env.VERSION || "",
@@ -13,7 +14,10 @@ const config = {
     },
   },
   mongodbUrl: process.env.MONGODB_URL || "",
+  khalti: {
+    apiUrl: process.env.KHALTI_API_URL || "",
+    secret: process.env.KHALTI_SECRET_KEY || "",
+  },
 };
 
 export default config;
-
