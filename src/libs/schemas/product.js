@@ -5,7 +5,7 @@ const productSchema = z.object({
   brand: z.string().optional(),
   category: z.string().optional(),
   price: z
-    .number({
+    .string({
       error: (value) =>
         value === undefined
           ? "Product price is required."

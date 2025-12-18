@@ -1,4 +1,5 @@
 import Product from "../models/Product.js";
+import uploadFile from "../utils/fileUploader.js";
 
 const getProducts = async (query) => {
   const { category, brand, name, min, max, limit, offset, createdBy } = query;
@@ -11,7 +12,7 @@ const getProducts = async (query) => {
   if (name) filters.name = { $regex: name, $options: "i" }; // Ilike match
   if (min) filters.price = { $gte: min };
   if (max) filters.price = { ...filters.price, $lte: max };
-  if (createdBy) filters.createdBy = createdBy; 
+  if (createdBy) filters.createdBy = createdBy;
 
   const products = await Product.find(filters)
     .sort(sort)
@@ -33,8 +34,12 @@ const getProductById = async (id) => {
   return product;
 };
 
-const createProduct = async (data, userId) => {
-  return await Product.create({ ...data, createdBy: userId });
+const createProduct = async (data, files, userId) => {
+  const uploadedFiles = await uploadFile(files);
+
+  const imageUrls = uploadedFiles.map((item) => item.url);
+
+  return await Product.create({ ...data, imageUrls, createdBy: userId });
 };
 
 const deleteProduct = async (id) => {
@@ -43,10 +48,18 @@ const deleteProduct = async (id) => {
   await Product.findByIdAndDelete(id);
 };
 
-const updateProduct = async (id, data) => {
+const updateProduct = async (id, data, files) => {
   await getProductById(id);
 
-  return await Product.findByIdAndUpdate(id, data, { new: true });
+  const updateData = data;
+
+  if (files && files.length > 0) {
+    const uploadedFiles = await uploadFile(files);
+
+    updateData.imageUrls = uploadedFiles.map((item) => item.url);
+  }
+
+  return await Product.findByIdAndUpdate(id, updateData, { new: true });
 };
 
 export default {

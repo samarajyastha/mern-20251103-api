@@ -20,4 +20,14 @@ const getUsers = async (req, res) => {
   }
 };
 
-export default { createUser, getUsers };
+const updateProfileImage = async (req, res) => {
+  try {
+    const data = await userService.updateProfileImage(req.user._id, req.file);
+
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
+};
+
+export default { createUser, getUsers, updateProfileImage };

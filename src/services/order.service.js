@@ -4,10 +4,10 @@ import {
   ORDER_STATUS_CANCELLED,
   ORDER_STATUS_CONFIRMED,
 } from "../constants/orderStatuses.js";
+import { payViaKhalti } from "../utils/payment.js";
 import { ROLE_ADMIN } from "../constants/roles.js";
 import Order from "../models/Order.js";
 import Payment from "../models/Payment.js";
-import { payViaKhalti } from "../utils/payment.js";
 
 const getOrders = async () => {
   return await Order.find()
