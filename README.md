@@ -260,17 +260,16 @@ Server ------------- Response -----------> Browser
 - Orders management
 - Payment (khalti)
 - File upload (Cloudinary, multer)
+- Debugging
+- Forgot password, reset password
+- Email send
 
 ---
-- 0904: Doubt clearance, esp payment
-- 0904: Debugging
-- 0906: Forgot password, reset password
-- 0906: Email send
 - 0907: User management
 - 0907: Mongodb Aggregation
 - 0908: Deployment
-- 0908: AI integration
 - 0908: MongoDB Atlas
+- 0908: AI integration
 - 0909: Template engine
 - 0910: Typescript (x)
 ---
@@ -395,3 +394,22 @@ POST /product JSON(data) -> Validate data -> Store in Database
 3. Upload to cloudinary
 4. Receive the file url from uploaded file
 5. Store the URL in database
+
+## Debugging
+1. Check from root app.js file
+2. Check in the routes file. for e.g `product.route.js`
+3. Check in the controller file. for e.g `product.controller.js` 
+4. Check in the service file. for e.g `product.service.js`
+5. Check imported files/functions
+
+## Forgot password/Reset password
+
+1. User requests for forgot password
+2. User inputs the email address
+3. Using the email address, find the user and create a reset password link & token
+4. Send the reset password link to that email
+
+5. User clicks on the reset password link from the received email.
+6. User inputs the new password, along with the token (reset password link)
+7. Verify the user & token
+8. Update the password.

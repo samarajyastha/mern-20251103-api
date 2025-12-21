@@ -29,4 +29,34 @@ const register = async (req, res) => {
   }
 };
 
-export default { login, register };
+const forgotPassword = async (req, res) => {
+  try {
+    const data = await authService.forgotPassword(req.body.email);
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error.message);
+  }
+};
+
+const resetPassword = async (req, res) => {
+  const query = req.query;
+
+  if (!query.token || !query.userId) {
+    return res.status(400).send("Token & user Id are required.");
+  }
+
+  try {
+    const data = await authService.resetPassword(
+      query.userId,
+      query.token,
+      req.body.password
+    );
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error.message);
+  }
+};
+
+export default { login, register, forgotPassword, resetPassword };

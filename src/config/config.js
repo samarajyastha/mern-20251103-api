@@ -23,6 +23,7 @@ const config = {
     apiKey: process.env.CLOUDINARY_API_KEY || "",
     apiSecret: process.env.CLOUDINARY_API_SECRET || "",
   },
+  emailApiKey: process.env.EMAIL_API_KEY || "",
 };
 
 export default config;
