@@ -8,6 +8,7 @@ import { payViaKhalti } from "../utils/payment.js";
 import { ROLE_ADMIN } from "../constants/roles.js";
 import Order from "../models/Order.js";
 import Payment from "../models/Payment.js";
+import mongoose from "mongoose";
 
 const getOrders = async () => {
   return await Order.find()
@@ -134,7 +135,41 @@ const confirmOrderPayment = async (id, status) => {
   );
 };
 
-// getOrderByMerchant
+const getOrdersByMerchant = async (merchantId) => {
+  return await Order.aggregate([
+    {
+      $lookup: {
+        from: "products",
+        localField: "orderItems.product",
+        foreignField: "_id",
+        as: "orderedProducts",
+      },
+    },
+    {
+      $unwind: "$orderedProducts",
+    },
+    {
+      $match: {
+        "orderedProducts.createdBy": new mongoose.Types.ObjectId(merchantId),
+      },
+    },
+    {
+      $project: {
+        orderNumber: 1,
+        payment: 1,
+        shippingAddress: 1,
+        status: 1,
+        totalPrice: 1,
+        user: 1,
+        "orderedProducts.price": 1,
+        "orderedProducts.name": 1,
+        "orderedProducts.imageUrls": 1,
+        "orderedProducts.category": 1,
+        "orderedProducts.brand": 1,
+      },
+    },
+  ]);
+};
 
 export default {
   createOrder,
@@ -147,4 +182,5 @@ export default {
   orderPaymentViaKhalti,
   orderPaymentViaCash,
   confirmOrderPayment,
+  getOrdersByMerchant,
 };

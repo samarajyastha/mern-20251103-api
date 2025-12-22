@@ -16,6 +16,12 @@ const login = async (data) => {
       message: "User not found.",
     };
 
+  if (!user.isActive)
+    throw {
+      status: 400,
+      message: "User deactivated.",
+    };
+
   const isPasswordMatch = bcrypt.compareSync(data.password, user.password);
 
   if (!isPasswordMatch)

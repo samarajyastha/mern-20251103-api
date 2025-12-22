@@ -1,8 +1,7 @@
 import express from "express";
 
 import { orderSchema, orderStatusSchema } from "../libs/schemas/order.js";
-import { ROLE_ADMIN, ROLE_USER } from "../constants/roles.js";
-import auth from "../middlewares/auth.js";
+import { ROLE_ADMIN, ROLE_MERCHANT, ROLE_USER } from "../constants/roles.js";
 import orderController from "../controllers/order.controller.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import validate from "../middlewares/validator.js";
@@ -13,13 +12,14 @@ const router = express.Router();
  * Url: /api/orders
  * Method: GET
  */
-router.get("/", auth, roleBasedAuth(ROLE_ADMIN), orderController.getOrders);
+router.get("/", roleBasedAuth(ROLE_ADMIN), orderController.getOrders);
+
+router.get("/user", roleBasedAuth(ROLE_USER), orderController.getOrdersByUser);
 
 router.get(
-  "/user",
-  auth,
-  roleBasedAuth(ROLE_USER),
-  orderController.getOrdersByUser
+  "/merchant",
+  roleBasedAuth(ROLE_MERCHANT),
+  orderController.getOrdersByMerchant
 );
 
 /**
@@ -28,7 +28,6 @@ router.get(
  */
 router.post(
   "/",
-  auth,
   roleBasedAuth(ROLE_USER),
   validate(orderSchema),
   orderController.createOrder
@@ -38,29 +37,19 @@ router.post(
  * Url: /api/orders/:id/cancel
  * Method: PUT
  */
-router.put("/:id/cancel", auth, orderController.cancelOrder);
+router.put("/:id/cancel", orderController.cancelOrder);
 
 /**
  * Url: /api/orders/:id
  * Method: DELETE
  */
-router.delete(
-  "/:id",
-  auth,
-  roleBasedAuth(ROLE_ADMIN),
-  orderController.deleteOrder
-);
+router.delete("/:id", roleBasedAuth(ROLE_ADMIN), orderController.deleteOrder);
 
 /**
  * Url: /api/orders/:id
  * Method: GET
  */
-router.get(
-  "/:id",
-  auth,
-  roleBasedAuth(ROLE_USER),
-  orderController.getOrderById
-);
+router.get("/:id", roleBasedAuth(ROLE_USER), orderController.getOrderById);
 
 /**
  * Url: /api/orders/:id/status
@@ -68,7 +57,6 @@ router.get(
  */
 router.put(
   "/:id/status",
-  auth,
   roleBasedAuth(ROLE_ADMIN),
   validate(orderStatusSchema),
   orderController.updateOrderStatus
@@ -80,7 +68,6 @@ router.put(
  */
 router.post(
   "/:id/payment/khalti",
-  auth,
   roleBasedAuth(ROLE_USER),
   orderController.orderPaymentViaKhalti
 );
@@ -91,7 +78,6 @@ router.post(
  */
 router.post(
   "/:id/payment/cash",
-  auth,
   roleBasedAuth(ROLE_USER),
   orderController.orderPaymentViaCash
 );
@@ -102,7 +88,6 @@ router.post(
  */
 router.put(
   "/:id/confirm-payment",
-  auth,
   roleBasedAuth(ROLE_USER),
   orderController.confirmOrderPayment
 );

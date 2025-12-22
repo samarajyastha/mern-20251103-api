@@ -263,12 +263,12 @@ Server ------------- Response -----------> Browser
 - Debugging
 - Forgot password, reset password
 - Email send
+- User management
 
 ---
-- 0907: User management
 - 0907: Mongodb Aggregation
+- 0907: MongoDB Atlas
 - 0908: Deployment
-- 0908: MongoDB Atlas
 - 0908: AI integration
 - 0909: Template engine
 - 0910: Typescript (x)
@@ -413,3 +413,14 @@ POST /product JSON(data) -> Validate data -> Store in Database
 6. User inputs the new password, along with the token (reset password link)
 7. Verify the user & token
 8. Update the password.
+
+## Mongodb Aggregation
+- Performing operation in multiple documents (table)
+- Filtering in multiple documents
+- Data formatting
+
+1. $match => Filtering
+2. $lookup => LEFT JOINS
+3. $unwind => INNER JOIN
+4. $project => Data formatting
+5. $group => complex grouped operations
