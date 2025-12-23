@@ -265,10 +265,10 @@ Server ------------- Response -----------> Browser
 - Email send
 - User management
 - Mongodb Aggregation
+- Deployment
+- MongoDB Atlas
 
 ---
-- 0908: Deployment
-- 0908: MongoDB Atlas
 - 0908: AI integration
 - 0909: Template engine
 - 0910: Typescript (x)
