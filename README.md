@@ -264,11 +264,11 @@ Server ------------- Response -----------> Browser
 - Forgot password, reset password
 - Email send
 - User management
+- Mongodb Aggregation
 
 ---
-- 0907: Mongodb Aggregation
-- 0907: MongoDB Atlas
 - 0908: Deployment
+- 0908: MongoDB Atlas
 - 0908: AI integration
 - 0909: Template engine
 - 0910: Typescript (x)
