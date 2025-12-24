@@ -226,76 +226,6 @@ Server ------------- Response -----------> Browser
 
 - Validation -> API (Most important), Frontend, Database (optional)
 
-=========================================================================================
-
-## JS course content
-
-- Print
-- Variables
-- Data types
-- Operators (arithmetic, logical, relational)
-- Conditional Statement (if, else, switch, ternary operator)
-- Loop (for, while)
-- Function
-- EcmaScript (Template literals, spread operator, destructuring, arrow function)
-- Array methods (map, reduce, sort, filter, find, includes, every, some)
-
-## NodeJS course content
-
-- NodeJS
-- CommonJS/ES modules
-- File system
-- HTTP
-- Event
-- Path
-- URL
-- HTTP methods, HTTP status codes (API)
-- Callbacks, Promises, async/await
-- Express
-- Environment variables (secrets, config)
-- Architecture
-- Postman
-- Semantics
-- Filter queries, pagination
-- Orders management
-- Payment (khalti)
-- File upload (Cloudinary, multer)
-- Debugging
-- Forgot password, reset password
-- Email send
-- User management
-- Mongodb Aggregation
-- Deployment
-- MongoDB Atlas
-
----
-- 0908: AI integration
-- 0909: Template engine
-- 0910: Typescript (x)
----
-
-## React course content
-- Refresh token (front end)
-- Pay via stripe
-
-## Learning Path
-
-1. JS
-
-Backend 2. Node 3. Express 4. MongoDB
-
-Frontend
-
-- DOM manipulation
-
-5. React
-6. Next.js
-
-# Github Pull request
-
-- Always create a new branch from `main` branch
-- Always format your code, use prettier code formatter
-
 ## HTTP Methods
 
 1. GET : Used to fetch/retrieve data, No request body (READ)
@@ -424,3 +354,69 @@ POST /product JSON(data) -> Validate data -> Store in Database
 3. $unwind => INNER JOIN
 4. $project => Data formatting
 5. $group => complex grouped operations
+
+=========================================================================================
+
+## JS course content
+
+- Print
+- Variables
+- Data types
+- Operators (arithmetic, logical, relational)
+- Conditional Statement (if, else, switch, ternary operator)
+- Loop (for, while)
+- Function
+- EcmaScript (Template literals, spread operator, destructuring, arrow function)
+- Array methods (map, reduce, sort, filter, find, includes, every, some)
+
+## NodeJS course content
+
+- NodeJS
+- CommonJS/ES modules
+- File system
+- HTTP
+- Event
+- Path
+- URL
+- HTTP methods, HTTP status codes (API)
+- Callbacks, Promises, async/await
+- Express
+- Environment variables (secrets, config)
+- Architecture
+- Postman
+- Semantics
+- Filter queries, pagination
+- Orders management
+- Payment (khalti)
+- File upload (Cloudinary, multer)
+- Debugging
+- Forgot password, reset password
+- Email send
+- User management
+- Mongodb Aggregation
+- Deployment
+- MongoDB Atlas
+- AI integration
+- Template engine
+
+## React course content
+- Refresh token (front end)
+- Pay via stripe
+
+## Learning Path
+
+1. JS
+
+Backend 2. Node 3. Express 4. MongoDB
+
+Frontend
+
+- DOM manipulation
+
+5. React
+6. Next.js
+
+# Github Pull request
+
+- Always create a new branch from `main` branch
+- Always format your code, use prettier code formatter

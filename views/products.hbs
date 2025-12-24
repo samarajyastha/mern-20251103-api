@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="container mx-auto py-16 px-4">
+    <div class="py-5 flex gap-3">
+      <label for="sort">Sort By: </label>
+      <button class="px-4 py-1 rounded-lg shadow-lg bg-blue-200" onclick="sortBy({price:1})">Price Low-High</button>
+      <button class="px-4 py-1 rounded-lg shadow-lg bg-blue-200" onclick="sortBy({price:-1})">Price High-Low</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+      {{#each products}}
+      <div
+        class="shadow overflow-hidden w-full max-w-sm bg-neutral-primary-soft border border-default rounded-xl shadow-xs">
+        <a href="/pages/products/{{_id}}">
+          <img class="w-full h-52 object-cover rounded-lg p-1" src="{{imageUrls.[0]}}" alt="product image" />
+        </a>
+        <div class="p-6">
+          <a href="/pages/products/{{_id}}">
+            <h5 class="text-xl text-heading font-semibold tracking-tight">{{name}}</h5>
+          </a>
+          <div>
+            <p>{{brand}}</p>
+            <p>{{category}}</p>
+          </div>
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-3xl font-extrabold text-heading">${{price}}</span>
+            <button type="button"
+              class="inline-flex items-center text-white bg-blue-500 hover:bg-blue-500-strong box-border border border-transparent focus:ring-4 focus:ring-blue-500-medium shadow-xs font-medium leading-5 rounded-xl text-sm px-3 py-2 focus:outline-none">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <script>
+    function sortBy(sort) {
+      const url = new URL(window.location.href);
+
+      url.searchParams.set("sort", JSON.stringify(sort));
+
+      window.location.href = url;
+    }
+  </script>
+</body>
+
+</html>
