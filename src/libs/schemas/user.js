@@ -14,7 +14,7 @@ const userSchema = z.object({
   email: z.email({ error: "Email is required." }),
   password: z.string({ error: "Password is required." }).min(6),
   phone: z.string({ error: "Phone number is required." }).min(6).max(13),
-  address: addressSchema.optional(),
+  address: addressSchema,
   roles: z.array(z.enum([ROLE_ADMIN, ROLE_MERCHANT, ROLE_USER])).optional(),
   profileImageUrl: z.string().optional(),
   isActive: z.boolean().optional(),
