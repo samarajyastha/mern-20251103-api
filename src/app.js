@@ -1,6 +1,7 @@
 import bodyParser from "body-parser";
 import express from "express";
 import multer from "multer";
+import cors from "cors";
 
 import auth from "./middlewares/auth.js";
 import authRoute from "./routes/auth.route.js";
@@ -23,6 +24,8 @@ connectCloudinary();
 app.use(bodyParser.json());
 
 app.use(logger);
+
+app.use(cors());
 
 app.set("view engine", "hbs");
 
