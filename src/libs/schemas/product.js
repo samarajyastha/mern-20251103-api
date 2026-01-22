@@ -13,7 +13,7 @@ const productSchema = z.object({
     })
     .min(1)
     .max(9999999),
-  stock: z.number().min(1).optional(),
+  stock: z.string("Stock must be number.").optional(),
   imageUrls: z.array(z.string()).optional(),
 });
 
