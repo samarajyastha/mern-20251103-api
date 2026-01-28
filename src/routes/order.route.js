@@ -19,7 +19,7 @@ router.get("/user", roleBasedAuth(ROLE_USER), orderController.getOrdersByUser);
 router.get(
   "/merchant",
   roleBasedAuth(ROLE_MERCHANT),
-  orderController.getOrdersByMerchant
+  orderController.getOrdersByMerchant,
 );
 
 /**
@@ -30,7 +30,7 @@ router.post(
   "/",
   roleBasedAuth(ROLE_USER),
   validate(orderSchema),
-  orderController.createOrder
+  orderController.createOrder,
 );
 
 /**
@@ -59,7 +59,7 @@ router.put(
   "/:id/status",
   roleBasedAuth(ROLE_ADMIN),
   validate(orderStatusSchema),
-  orderController.updateOrderStatus
+  orderController.updateOrderStatus,
 );
 
 /**
@@ -69,7 +69,17 @@ router.put(
 router.post(
   "/:id/payment/khalti",
   roleBasedAuth(ROLE_USER),
-  orderController.orderPaymentViaKhalti
+  orderController.orderPaymentViaKhalti,
+);
+
+/**
+ * Url: /api/orders/:id/payment/stripe
+ * Method: POST
+ */
+router.post(
+  "/:id/payment/stripe",
+  roleBasedAuth(ROLE_USER),
+  orderController.orderPaymentViaStripe,
 );
 
 /**
@@ -79,7 +89,7 @@ router.post(
 router.post(
   "/:id/payment/cash",
   roleBasedAuth(ROLE_USER),
-  orderController.orderPaymentViaCash
+  orderController.orderPaymentViaCash,
 );
 
 /**
@@ -89,7 +99,7 @@ router.post(
 router.put(
   "/:id/confirm-payment",
   roleBasedAuth(ROLE_USER),
-  orderController.confirmOrderPayment
+  orderController.confirmOrderPayment,
 );
 
 export default router;

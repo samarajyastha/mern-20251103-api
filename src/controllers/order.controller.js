@@ -44,7 +44,7 @@ const updateOrderStatus = async (req, res) => {
   try {
     const data = await orderService.updateOrderStatus(
       req.params.id,
-      req.body?.status
+      req.body?.status,
     );
 
     res.json(data);
@@ -83,6 +83,16 @@ const orderPaymentViaKhalti = async (req, res) => {
   }
 };
 
+const orderPaymentViaStripe = async (req, res) => {
+  try {
+    const data = await orderService.orderPaymentViaStripe(req.params.id);
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
 const orderPaymentViaCash = async (req, res) => {
   try {
     const data = await orderService.orderPaymentViaCash(req.params.id);
@@ -100,7 +110,7 @@ const confirmOrderPayment = async (req, res) => {
   try {
     const data = await orderService.confirmOrderPayment(
       req.params.id,
-      req.body.status
+      req.body.status,
     );
 
     res.json(data);
@@ -131,4 +141,5 @@ export default {
   orderPaymentViaCash,
   confirmOrderPayment,
   getOrdersByMerchant,
+  orderPaymentViaStripe,
 };
