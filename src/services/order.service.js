@@ -60,7 +60,7 @@ const cancelOrder = async (id, user) => {
   return await Order.findByIdAndUpdate(
     id,
     { status: ORDER_STATUS_CANCELLED },
-    { new: true }
+    { new: true },
   );
 };
 
@@ -83,6 +83,7 @@ const orderPaymentViaKhalti = async (id) => {
   });
 
   return await payViaKhalti({
+    id,
     amount: order.totalPrice,
     purchaseOrderId: order.orderNumber,
     purchaseOrderName: order.orderItems[0].product.name,
@@ -104,7 +105,7 @@ const orderPaymentViaCash = async (id) => {
       payment: orderPayment._id,
       status: ORDER_STATUS_CONFIRMED,
     },
-    { new: true }
+    { new: true },
   );
 };
 
@@ -131,7 +132,7 @@ const confirmOrderPayment = async (id, status) => {
     {
       status: ORDER_STATUS_CONFIRMED,
     },
-    { new: true }
+    { new: true },
   );
 };
 
