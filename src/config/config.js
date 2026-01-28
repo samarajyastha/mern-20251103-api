@@ -16,6 +16,7 @@ const config = {
   mongodbUrl: process.env.MONGODB_URL || "",
   khalti: {
     apiUrl: process.env.KHALTI_API_URL || "",
+    returnUrl: process.env.KHALTI_RETURN_URL || "",
     secret: process.env.KHALTI_SECRET_KEY || "",
   },
   cloudinary: {

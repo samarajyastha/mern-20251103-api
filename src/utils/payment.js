@@ -4,7 +4,7 @@ import config from "../config/config.js";
 
 const payViaKhalti = async (data) => {
   const body = {
-    return_url: config.appUrl, // [TODO SS: 2025-12-17] use return url from frontend app route
+    return_url: `${config.appUrl}/${config.khalti.returnUrl}`, // [TODO SS: 2025-12-17] use return url from frontend app route
     website_url: config.appUrl,
     amount: data.amount,
     purchase_order_id: data.purchaseOrderId,
