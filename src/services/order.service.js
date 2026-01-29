@@ -10,15 +10,19 @@ import Order from "../models/Order.js";
 import Payment from "../models/Payment.js";
 import mongoose from "mongoose";
 
-const getOrders = async () => {
-  return await Order.find()
+const getOrders = async (status) => {
+  return await Order.find({ status })
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
     .populate("orderItems.product", "name brand category price imageUrls");
 };
 
-const getOrdersByUser = async (userId) => {
-  return await Order.find({ user: userId })
+const getOrdersByUser = async (status, userId) => {
+  let filter = { user: userId };
+
+  if (status) filter.status = status;
+
+  return await Order.find(filter)
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
     .populate("orderItems.product", "name brand category price imageUrls");

@@ -1,8 +1,10 @@
 import orderService from "../services/order.service.js";
 
 const getOrders = async (req, res) => {
+  const status = req.query?.status;
+
   try {
-    const data = await orderService.getOrders();
+    const data = await orderService.getOrders(status);
 
     res.json(data);
   } catch (error) {
@@ -11,8 +13,10 @@ const getOrders = async (req, res) => {
 };
 
 const getOrdersByUser = async (req, res) => {
+  const status = req.query?.status;
+
   try {
-    const data = await orderService.getOrdersByUser(req.user._id);
+    const data = await orderService.getOrdersByUser(status, req.user._id);
 
     res.json(data);
   } catch (error) {
