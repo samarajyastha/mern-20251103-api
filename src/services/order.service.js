@@ -11,7 +11,11 @@ import Payment from "../models/Payment.js";
 import mongoose from "mongoose";
 
 const getOrders = async (status) => {
-  return await Order.find({ status })
+  let filter = {};
+
+  if (status) filter.status = status;
+
+  return await Order.find(filter)
     .sort({ createdAt: -1 })
     .populate("user", "name email phone")
     .populate("orderItems.product", "name brand category price imageUrls");
