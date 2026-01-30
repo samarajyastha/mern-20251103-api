@@ -92,7 +92,7 @@ const forgotPassword = async (email) => {
 
   const resetPasswordLink = `${config.appUrl}/reset-password?userId=${user._id}&token=${token}`;
 
-  sendEmail(email, {
+  await sendEmail(email, {
     subject: "Reset password link",
     html: `
       <div style="padding: 16px; font-family: sans-serif">
