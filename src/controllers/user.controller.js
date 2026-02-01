@@ -12,7 +12,7 @@ const createUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
   try {
-    const data = await userService.getUsers();
+    const data = await userService.getUsers(req.query);
 
     res.status(201).json(data);
   } catch (error) {
