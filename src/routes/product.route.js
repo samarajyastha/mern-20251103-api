@@ -14,6 +14,10 @@ const router = express.Router();
  */
 router.get("/", productController.getProducts);
 
+router.get("/brands", productController.getBrands);
+
+router.get("/categories", productController.getCategories);
+
 /**
  * GET /api/products/:id
  */
@@ -27,7 +31,7 @@ router.post(
   auth,
   roleBasedAuth(ROLE_MERCHANT),
   validate(productSchema),
-  productController.createProduct
+  productController.createProduct,
 );
 
 /**
@@ -37,7 +41,7 @@ router.delete(
   "/:id",
   auth,
   roleBasedAuth(ROLE_MERCHANT),
-  productController.deleteProduct
+  productController.deleteProduct,
 );
 
 /**
@@ -47,7 +51,7 @@ router.put(
   "/:id",
   auth,
   roleBasedAuth(ROLE_MERCHANT),
-  productController.updateProduct
+  productController.updateProduct,
 );
 
 export default router;

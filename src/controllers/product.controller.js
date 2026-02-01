@@ -25,7 +25,7 @@ const createProduct = async (req, res) => {
     const createdProduct = await productService.createProduct(
       req.body,
       req.files,
-      req.user._id
+      req.user._id,
     );
 
     res.status(201).json(createdProduct);
@@ -49,10 +49,30 @@ const updateProduct = async (req, res) => {
     const updatedProduct = await productService.updateProduct(
       req.params.id,
       req.body,
-      req.files
+      req.files,
     );
 
     res.status(201).json(updatedProduct);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
+const getBrands = async (req, res) => {
+  try {
+    const data = await productService.getBrands();
+
+    res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
+
+const getCategories = async (req, res) => {
+  try {
+    const data = await productService.getCategories();
+
+    res.json(data);
   } catch (error) {
     res.status(error.status || 400).send(error?.message);
   }
@@ -64,4 +84,6 @@ export default {
   createProduct,
   deleteProduct,
   updateProduct,
+  getBrands,
+  getCategories,
 };

@@ -75,10 +75,20 @@ const updateProduct = async (id, data, files) => {
   return await Product.findByIdAndUpdate(id, updateData, { new: true });
 };
 
+const getBrands = async () => {
+  return await Product.distinct("brand");
+};
+
+const getCategories = async () => {
+  return await Product.distinct("category");
+};
+
 export default {
   getProducts,
   getProductById,
   createProduct,
   deleteProduct,
   updateProduct,
+  getBrands,
+  getCategories,
 };
