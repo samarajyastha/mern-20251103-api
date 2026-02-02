@@ -18,6 +18,8 @@ router.get("/brands", productController.getBrands);
 
 router.get("/categories", productController.getCategories);
 
+router.get("/total", productController.getTotalCount);
+
 /**
  * GET /api/products/:id
  */
