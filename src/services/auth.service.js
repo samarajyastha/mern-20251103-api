@@ -64,6 +64,7 @@ const register = async (data) => {
     phone: data.phone,
     address: data.address,
     password: hashedPassword,
+    profileImageUrl: data.profileImageUrl,
   });
 
   return {
