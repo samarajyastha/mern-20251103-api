@@ -40,6 +40,7 @@ const getOrders = async (status) => {
     },
     {
       $project: {
+        "orderItems._id": 1,
         "orderItems.name": 1,
         "orderItems.brand": 1,
         "orderItems.category": 1,
@@ -234,6 +235,7 @@ const getOrdersByMerchant = async (merchantId, status) => {
     },
     {
       $project: {
+        "orderItems._id": 1,
         "orderItems.name": 1,
         "orderItems.brand": 1,
         "orderItems.category": 1,
